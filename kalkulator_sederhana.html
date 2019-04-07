@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+    html, body {
+      height: 100%;
+      background-color: #eee;
+      font-size: 32px;
+      text-align: center;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    input{
+       text-align:center;
+    }
+
+    input[type=button]:nth-of-type(1){
+      color:red;
+      background-color: blue;
+    }
+    input[type=button]:nth-of-type(2){
+      color:blue;
+      background-color: red;
+    }
+    input[type=button]:nth-of-type(3){
+      color:brown;
+      background-color: orange;
+    }
+    input[type=button]:nth-of-type(4){
+      color:orange;
+      background-color: brown;
+    }
+    input[type=button]:nth-of-type(5){
+      color:white;
+      background-color: brown;
+    }
+  </style>
+
+</head>
+<body>
+  <div class="container fluid flex-column d-flex h-100 justify-content-center">
+    <h1 id="judul">Kalkulator Sederhana</h1>
+  <form name="form_kalkulator" id="form_kalkulator">
+
+      <div class="form-group">
+        <label for="angka_pertama">Angka-Pertama</label><br />
+        <input type="text" name="angka_pertama" placeholder="Masukkan angka pertama"><br />
+      </div>
+
+      <div class="form-group">
+        <label for="angka_kedua">Angka Ke-Dua</label><br />
+        <input type="text" name="angka_kedua" placeholder="Masukkan angka kedua"><br />
+      </div>
+
+      <div id="jeda" class="btn-group btn-group-justified">
+      <input type="button" name="" value="+" onclick="tambah()" class="btn btn-primary">
+      <input type="button" name="" value="-" onClick="kurang()" class="btn btn-primary">
+      <input type="button" name="" value="x" onclick="kali()" class="btn btn-primary">
+      <input type="button" name="" value=":" onclick="bagi()" class="btn btn-primary">
+      </div>
+      <br /><br />
+
+      <input type="button" name="" value="HAPUS SEMUA" onclick="hapus()" class="btn btn-primary">
+
+      <br /><br />
+      <input type="text" name="hasil" placeholder="Hasil hitungan angka">
+  </form>
+</div>
+
+    <script type="text/javascript">
+      function tambah(){
+
+        angka_pertama=parseInt(form_kalkulator.angka_pertama.value);
+        angka_kedua=parseInt(form_kalkulator.angka_kedua.value);
+        hasil=angka_pertama+angka_kedua;
+        form_kalkulator.hasil.value=hasil;
+      }
+
+      function kurang(){
+
+       angka_pertama=parseInt(form_kalkulator.angka_pertama.value);
+       angka_kedua=parseInt(form_kalkulator.angka_kedua.value);
+       hasil=angka_pertama-angka_kedua;
+       form_kalkulator.hasil.value=hasil;
+
+      }
+
+      function kali(){
+
+        angka_pertama=parseInt(form_kalkulator.angka_pertama.value);
+        angka_kedua=parseInt(form_kalkulator.angka_kedua.value);
+        hasil=angka_pertama*angka_kedua;
+        form_kalkulator.hasil.value=hasil;
+
+      }
+
+      function bagi(){
+        angka_pertama=parseInt(form_kalkulator.angka_pertama.value);
+        angka_kedua=parseInt(form_kalkulator.angka_kedua.value);
+        hasil=angka_pertama/angka_kedua;
+        form_kalkulator.hasil.value=hasil;
+      }
+
+      function hapus(){
+
+      document.getElementById("form_kalkulator").reset();
+      }
+
+
+    </script>
+</body>
+</html>
